@@ -1,0 +1,82 @@
+{% extends 'layout.njk' %}
+
+{% set title = 'Just a little analytics insight for your personal or indie project' %}
+
+{% block content %}
+  <div class="space-y-10 sm:space-y-20">
+    <div class="sm:w-3/4 sm:mx-auto space-y-5 sm:space-y-10">
+      <h1 class="text-xl sm:text-2xl font-semibold text-center">
+        Just a little analytics insight for your personal or indie project
+      </h1>
+      <h2 class="text-lg sm:text-xl text-center">
+        piratepx is a<br>
+        <span class="font-semibold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-400">simple,</span>
+        <span class="font-semibold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-400">privacy-respecting,</span><br>
+        <span class="font-semibold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-400">no cookie,</span>
+        <span class="font-semibold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-400">zero JavaScript,</span><br>
+        <span class="font-semibold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-400">35 byte counter pixel</span><br>
+        for<br>
+        <span class="font-semibold bg-clip-text text-transparent bg-gradient-to-l from-gray-900 to-gray-400">websites,</span>
+        <span class="font-semibold bg-clip-text text-transparent bg-gradient-to-l from-gray-900 to-gray-400">mobile apps,</span><br>
+        <span class="font-semibold bg-clip-text text-transparent bg-gradient-to-l from-gray-900 to-gray-400">server-side APIs,</span>
+        <span class="font-semibold bg-clip-text text-transparent bg-gradient-to-l from-gray-900 to-gray-400">CLIs,</span><br>
+        and <span class="font-semibold bg-clip-text text-transparent bg-gradient-to-l from-gray-900 to-gray-400">just about anywhere else</span>
+      </h2>
+      <h2 class="text-lg sm:text-xl text-center">
+        100% free and <a href="https://github.com/piratepx/app" target="_blank">open source</a>
+      </h2>
+      <form
+        method="get"
+        action="https://app.piratepx.com/signup"
+        class="sm:flex"
+      >
+        <input
+          class="block w-full mb-3 sm:mr-3 sm:mb-0 bg-transparent placeholder-gray-700 border-2 border-gray-400 focus:border-gray-900 outline-none rounded-none px-3 py-1"
+          name="email"
+          placeholder="captain@yourproject.com"
+        />
+        <button
+          type="submit"
+          class="block sm:flex-none w-full sm:w-auto text-white bg-gray-900 hover:bg-gray-700 border-2 border-gray-900 hover:border-gray-700 px-3 py-1"
+        >
+          Sign Up for Free
+        </button>
+      </form>
+    </div>
+    <div class="space-y-5">
+      <h2 class="text-lg sm:text-xl text-center font-semibold">What’s the catch?</h2>
+      <p>
+        piratepx is designed to be simple and constrained in a way that makes it feasible to run at a very low cost.
+      </p>
+      <ul class="ml-10 space-y-3" style="list-style-type: square;">
+        <li>Only the last 30 days of counts are stored</li>
+        <li>Counts are aggregated on a per day basis</li>
+        <li>There’s no concept of unique users or sessions</li>
+      </ul>
+      <p>So, you can say the catch is that it’s limited... on purpose.
+    </div>
+    <div class="space-y-5">
+      <h2 class="text-lg sm:text-xl text-center font-semibold">
+        It’s free, so am I the product?
+      </h2>
+      <p>
+        While this is true most of the time, it’s not the case here. piratepx has no nefarious plan to harvest browsing data, sell ads, or anything like that.
+      </p>
+      <p>
+        It’s just a tool, built by one developer, to help other developers of small-scale projects avoid choosing Google Analytics simply because it’s the free option.
+      </p>
+    </div>
+    <div class="space-y-5">
+      <h2 class="text-lg sm:text-xl text-center font-semibold">Who are you?</h2>
+      <div class="sm:flex sm:items-start">
+        <img
+          src="/_assets/profile.jpg?v={% version %}"
+          class="sm:flex-none w-1/2 sm:w-40 mx-auto mb-5 sm:m-0 sm:mr-5"
+        />
+        <p>
+          Hey! My name is Justin. I live in Chattanooga, Tennessee with my wife, two kids, and dog, Ender. I built piratepx as way to get a little analytics insight into <a href="https://github.com/jstayton" target="_blank">my own personal and indie projects</a> (like <a href="https://www.lateral.run" target="_blank">Lateral.run</a>) without having to resort to Google Analytics. You can follow me on Twitter at my original AOL screen name, <a href="https://twitter.com/kidjustino" target="_blank">@kidjustino</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+{% endblock %}

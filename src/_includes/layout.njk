@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="description" content="Just a little analytics insight for your personal or indie project. A simple, privacy-respecting, no cookie, zero JavaScript, 35 byte counter pixel for websites, mobile apps, server-side APIs, CLIs, and just about anywhere else." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/_assets/main.css?v={% version %}" />
+    <title>{% if title %}{{ title }} – {% endif %}piratepx</title>
+  </head>
+  <body class="font-mono text-gray-900 tracking-normal leading-normal antialiased bg-gray-100">
+    <div class="min-h-screen mx-auto p-5 sm:p-10" style="max-width: 768px;">
+      <header class="mb-5 sm:mb-10">
+        <a href="/" class="block mx-auto" style="width: 80px;">
+          <img
+            src="/_assets/logo.svg?v={% version %}"
+            width="80"
+            height="60"
+            alt="piratepx"
+          />
+        </a>
+      </header>
+      <main>
+        {% block content %}
+          {{ content | safe }}
+        {% endblock %}
+      </main>
+      <footer class="text-gray-400 text-sm mt-10 sm:mt-20">
+        <ul class="flex justify-center space-x-10">
+          <li>
+            <a href="/" class="block">
+              <img
+                src="/_assets/logo.svg?v={% version %}"
+                width="28"
+                height="21"
+                alt="piratepx"
+              />
+            </a>
+          </li>
+          <li><a href="/readme" class="no-underline">README</a></li>
+          <li><a href="/legal/privacy" class="no-underline">Privacy</a></li>
+          <li><a href="/legal/terms" class="no-underline">Terms</a></li>
+        </ul>
+      </footer>
+      {% env 'production' %}
+        <img
+          class="absolute bottom-0 right-0"
+          src="https://app.piratepx.com/ship?p=34b258e6-b0ff-4e9e-af12-d4b51ce8bf88"
+        />
+      {% endenv %}
+    </div>
+  </body>
+</html>

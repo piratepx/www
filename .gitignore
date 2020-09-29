@@ -1,0 +1,12 @@
+# npm
+/node_modules
+
+# Logs
+npm-debug.log*
+
+# 11ty
+/dist
+
+# Temp
+/tmp/**
+!/tmp/.keep

@@ -1,0 +1,100 @@
+{% extends 'layout.njk' %}
+
+{% set title = 'README' %}
+
+{% block content %}
+  <div class="space-y-10">
+    <h1 class="text-xl sm:text-2xl font-semibold text-center mb-10">README</h1>
+    <div class="space-y-5">
+      <p>
+        piratepx consists of a single endpoint that you request to increment a count:
+      </p>
+      <pre><code>https://app.piratepx.com/ship?p={% raw %}{{PROJECT_ID}}{% endraw %}&i={% raw %}{{COUNT_IDENTIFIER}}{% endraw %}</code></pre>
+    </div>
+    <div class="space-y-5">
+      <h2 class="text-lg sm:text-xl font-semibold">Usage</h2>
+      <h3 class="sm:text-lg font-semibold text-gray-700">Website</h3>
+      <p>
+        If you’re adding piratepx to a website, simply drop this URL into an <code>{{ '<img>' | escape }}</code> tag:
+      </p>
+      <pre><code>{{ '<img src="https://app.piratepx.com/ship?p={{PROJECT_ID}}" />' | escape }}</code></pre>
+      <p>
+        If you leave out the count identifier (<code>i</code> in the query string), the <code>Referer</code> header is parsed for a URL path. For example, <code>https://www.yoursite.com/about?query=string#hash</code> is parsed as <code>/about</code>. This allows you to add the <code>{{ '<img>' | escape }}</code> in one place on the website (like the footer) without having to configure the count identifier for every page.
+      </p>
+      <p>
+        A few things to keep in mind:
+      </p>
+      <ul class="ml-10 space-y-3" style="list-style-type: square;">
+        <li>
+          Some websites suppress the <code>Referer</code> header from being sent (like GitHub), in which case you will need to explicitly set the count identifier in the query string.
+        </li>
+        <li>
+          If the website includes lots of unique identifiers in the URL path (think a SaaS app with record IDs), it’s highly recommended to explicitly set a count identifier that’s more generalized for the route. For example, <code>/users/:user_id</code> instead of ending up with separate counts for <code>/users/123</code>, <code>/users/456</code>, etc.
+        </li>
+      </ul>
+      <h3 class="sm:text-lg font-semibold text-gray-700">Anywhere Else</h3>
+      <p>
+        If you’re adding piratepx to a mobile app, server-side API, CLI, or other non-HTML context, simply use your preferred request library in the language of your project. Here are a few examples...
+      </p>
+      <p>
+        JavaScript’s <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" target="_blank"><code>fetch</code></a>:
+      </p>
+<pre><code>const query = new URLSearchParams({
+  p: '{% raw %}{{PROJECT_ID}}{% endraw %}',
+  i: '{% raw %}{{COUNT_IDENTIFIER}}{% endraw %}',
+})
+
+fetch(`https://app.piratepx.com/ship?${query.toString()}`)
+</code></pre>
+      <p>
+        PHP’s <a href="https://www.php.net/manual/en/function.file-get-contents.php" target="_blank"><code>file_get_contents</code></a>:
+      </p>
+<pre><code>$query = http_build_query(array(
+  'p' => '{% raw %}{{PROJECT_ID}}{% endraw %}',
+  'i' => '{% raw %}{{COUNT_IDENTIFIER}}{% endraw %}'
+))
+
+file_get_contents("https://app.piratepx.com/ship?{$query}")
+</code></pre>
+      <p>
+        <a href="https://curl.haxx.se/" target="_blank">curl</a>:
+      </p>
+      <pre><code>curl -G -d 'p={% raw %}{{PROJECT_ID}}{% endraw %}' --data-urlencode 'i={% raw %}{{COUNT_IDENTIFIER}}{% endraw %}' https://app.piratepx.com/ship</code></pre>
+    </div>
+    <div class="space-y-5">
+      <h2 class="text-lg sm:text-xl font-semibold">Options</h2>
+      <table class="table-auto">
+        <thead>
+          <tr>
+            <th class="p-3">Param</th>
+            <th class="p-3">Type</th>
+            <th class="p-3">Validation</th>
+            <th class="p-3">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="border p-3"><code>p</code></td>
+            <td class="border p-3">UUID</td>
+            <td class="border p-3">Required</td>
+            <td class="border p-3">The ID of your project.</td>
+          </tr>
+          <tr>
+            <td class="border p-3"><code>i</code></td>
+            <td class="border p-3">String</td>
+            <td class="border p-3">Max length: 255</td>
+            <td class="border p-3">
+              The count identifier to increment. If not set, the <code>Referer</code> header is parsed for a URL path.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="space-y-5">
+      <h2 class="text-lg sm:text-xl font-semibold">Response</h2>
+      <p>
+        A 1×1 pixel, 35 byte transparent GIF is returned regardless of whether the request was successful or ran into an error.
+      </p>
+    </div>
+  </div>
+{% endblock %}
