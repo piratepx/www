@@ -37,7 +37,7 @@
         If you’re adding piratepx to a mobile app, server-side API, CLI, or other non-HTML context, simply use your preferred request library in the language of your project. Here are a few examples...
       </p>
       <p>
-        JavaScript’s <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" target="_blank"><code>fetch</code></a>:
+        JavaScript’s <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" target="_blank" rel="noopener"><code>fetch</code></a>:
       </p>
 <pre><code>const query = new URLSearchParams({
   p: '{% raw %}{{PROJECT_ID}}{% endraw %}',
@@ -47,7 +47,7 @@
 fetch(`https://app.piratepx.com/ship?${query.toString()}`)
 </code></pre>
       <p>
-        PHP’s <a href="https://www.php.net/manual/en/function.file-get-contents.php" target="_blank"><code>file_get_contents</code></a>:
+        PHP’s <a href="https://www.php.net/manual/en/function.file-get-contents.php" target="_blank" rel="noopener"><code>file_get_contents</code></a>:
       </p>
 <pre><code>$query = http_build_query(array(
   'p' => '{% raw %}{{PROJECT_ID}}{% endraw %}',
@@ -57,7 +57,7 @@ fetch(`https://app.piratepx.com/ship?${query.toString()}`)
 file_get_contents("https://app.piratepx.com/ship?{$query}")
 </code></pre>
       <p>
-        <a href="https://curl.haxx.se/" target="_blank">curl</a>:
+        <a href="https://curl.haxx.se/" target="_blank" rel="noopener">curl</a>:
       </p>
       <pre><code>curl -G -d 'p={% raw %}{{PROJECT_ID}}{% endraw %}' --data-urlencode 'i={% raw %}{{COUNT_IDENTIFIER}}{% endraw %}' https://app.piratepx.com/ship</code></pre>
     </div>
