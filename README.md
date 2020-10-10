@@ -8,6 +8,7 @@ counter pixel for websites, mobile apps, server-side APIs, CLIs, and just about
 anywhere else.
 
 Sign up for free at https://www.piratepx.com!
+![piratepx](https://app.piratepx.com/ship?p=54c04676-e9cf-4ca8-8934-78a629eb4a2c&i=www)
 
 ## Development
 
