@@ -1,4 +1,4 @@
-# 🏴‍☠️px Website
+<h1 align="center">🏴‍☠️<br /><br />piratepx&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;website</h1>
 
 The website at https://www.piratepx.com. Built with
 [11ty](https://www.11ty.dev/) and [Tailwind CSS](https://tailwindcss.com/).
