@@ -11,7 +11,8 @@
     "build": "NODE_ENV=production eleventy & NODE_ENV=production postcss ./src/_assets/main.css -o ./dist/_assets/main.css",
     "dev": "eleventy --serve & postcss ./src/_assets/main.css -o ./tmp/_assets/main.css --watch",
     "lint": "prettier --check .",
-    "lint:fix": "prettier --write ."
+    "lint:fix": "prettier --write .",
+    "release": "release-it"
   },
   "dependencies": {
     "tailwindcss": "^1.8.13"
