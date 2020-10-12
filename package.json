@@ -14,14 +14,14 @@
     "lint:fix": "prettier --write ."
   },
   "dependencies": {
-    "tailwindcss": "^1.8.10"
+    "tailwindcss": "^1.8.13"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.11.0",
     "autoprefixer": "^9.8.6",
     "postcss-cli": "^7.1.2",
     "prettier": "2.1.2",
-    "release-it": "^14.0.3"
+    "release-it": "^14.1.0"
   },
   "engines": {
     "node": "14.x",
