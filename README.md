@@ -3,7 +3,7 @@
 The website at https://www.piratepx.com. Built with
 [11ty](https://www.11ty.dev/) and [Tailwind CSS](https://tailwindcss.com/).
 
-piratepx is a simple, privacy-respecting, no cookie, zero JavaScript, 35 byte
+piratepx is a simple, privacy-respecting, no cookie, zero JavaScript, 37 byte
 counter pixel for websites, mobile apps, server-side APIs, CLIs, and just about
 anywhere else.
 
