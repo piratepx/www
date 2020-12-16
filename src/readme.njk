@@ -17,14 +17,15 @@
       <p>
         If you’re adding piratepx to a website, simply drop this URL into an <code>{{ '<img>' | escape }}</code> tag:
       </p>
-      <pre><code>{{ '<img src="https://app.piratepx.com/ship?p={{PROJECT_ID}}" />' | escape }}</code></pre>
+      <pre><code>{{ '<img src="https://app.piratepx.com/ship?p={{PROJECT_ID}}&i={{COUNT_IDENTIFIER}}" />' | escape }}</code></pre>
       <p>
         If you leave out the count identifier (<code>i</code> in the query string), the <code>Referer</code> header is parsed for a URL path. For example, <code>https://www.yoursite.com/about?query=string#hash</code> is parsed as <code>/about</code>. This allows you to add the <code>{{ '<img>' | escape }}</code> in one place on the website (like the footer) without having to configure the count identifier for every page.
       </p>
       <p>
-        A few things to keep in mind:
+        <i>However</i>, a few things to keep in mind:
       </p>
       <ul class="ml-10 space-y-3" style="list-style-type: square;">
+        <li>Browsers are increasingly using the <code>Referrer-Policy</code> <code>strict-origin-when-cross-origin</code> by default, <a href="https://web.dev/referrer-best-practices" target="_blank" rel="noopener">as explained in this helpful article</a>. This results in <code>/</code> being counted as the identifier regardless of the actual URL path. You can either override the browser’s default by setting your own <code>Referrer-Policy</code>, or explicitly set the count identifier in the query string.</li>
         <li>
           Some websites suppress the <code>Referer</code> header from being sent (like GitHub), in which case you will need to explicitly set the count identifier in the query string.
         </li>
