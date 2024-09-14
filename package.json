@@ -6,7 +6,10 @@
   "homepage": "https://www.piratepx.com",
   "bugs": "https://github.com/piratepx/www/issues",
   "license": "MIT",
-  "repository": "piratepx/www",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/piratepx/www.git"
+  },
   "scripts": {
     "build": "NODE_ENV=production eleventy & NODE_ENV=production postcss ./src/_assets/main.css -o ./dist/_assets/main.css",
     "dev": "eleventy --serve & postcss ./src/_assets/main.css -o ./tmp/_assets/main.css --watch",
@@ -25,7 +28,7 @@
     "release-it": "^14.2.2"
   },
   "engines": {
-    "node": "14.x",
-    "npm": "6.x"
+    "node": "22.x",
+    "npm": "10.x"
   }
 }
