@@ -1,3 +1,6 @@
+**NOTICE:** _This project is deprecated and no longer maintained. The hosted
+version at https://www.piratepx.com will be shut down on December 1, 2025._
+
 # 🏴‍☠️ piratepx / website
 
 The website at https://www.piratepx.com. Built with
